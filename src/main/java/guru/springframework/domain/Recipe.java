@@ -9,6 +9,7 @@ import java.util.Set;
 @Entity
 public class Recipe {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,6 +29,9 @@ public class Recipe {
 
     @Lob
     private Byte[] image;
+
+    @Enumerated(EnumType.STRING)
+    private Difficulty difficulty;  next up 144
 
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
