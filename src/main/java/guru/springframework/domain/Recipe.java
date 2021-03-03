@@ -31,10 +31,17 @@ public class Recipe {
     private Byte[] image;
 
     @Enumerated(EnumType.STRING)
-    private Difficulty difficulty;  next up 144
+    private Difficulty difficulty;  //next up 144
 
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
+
+    @ManyToMany
+    @JoinTable(name = "recipecatagory",
+     joinColumns=@JoinColumn(name="recipe_id"),
+    inverseJoinColumns = @JoinColumn(name="catagory_id"))
+    private Set<Catagory> catagory;
+
 
     public Long getId() {
         return id;
