@@ -17,4 +17,6 @@ public class Ingredient {
 
     @OneToOne
     private UOM uom;
+
+
 }

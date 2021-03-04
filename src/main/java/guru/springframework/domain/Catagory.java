@@ -1,15 +1,18 @@
 package guru.springframework.domain;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Set;
 
+@Data
 @Entity
 public class Catagory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToMany(mappedBy="catagory")
+    @ManyToMany(mappedBy = "catagory")
     private Set<Recipe> recipes;
 
     private String description;
